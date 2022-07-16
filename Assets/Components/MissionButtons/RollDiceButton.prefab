@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9116388243548820143}
   - component: {fileID: 9116388243548820136}
   - component: {fileID: 9116388243548820141}
-  - component: {fileID: -8635221086565468703}
+  - component: {fileID: -6864092933407569129}
   m_Layer: 0
   m_Name: RollDiceButton
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &-8635221086565468703
+--- !u!114 &-6864092933407569129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

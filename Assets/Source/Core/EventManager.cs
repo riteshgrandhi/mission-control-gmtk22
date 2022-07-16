@@ -41,4 +41,17 @@ public static class EventManager
 
         OnRollDice();
     }
+
+    public delegate void OnRollDiceDoneDelegate(RolledDiceData rolledDiceData);
+    public static event OnRollDiceDoneDelegate OnRollDiceDone;
+    public static void OnRollDiceDoneEvent(RolledDiceData rolledDiceData)
+    {
+        if (OnRollDiceDone == null)
+        {
+            Debug.LogWarning("Event has no subscribers");
+            return;
+        }
+
+        OnRollDiceDone(rolledDiceData);
+    }
 }
