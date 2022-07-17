@@ -1,4 +1,5 @@
 using Assets.Source.Core.EventData;
+using System;
 using UnityEngine;
 
 public static class EventManager
@@ -14,6 +15,11 @@ public static class EventManager
         }
 
         OnNumPadButtonClick(missionButtonClickData);
+    }
+
+    internal static void OnMissionTaskDoneEvent(MissionTaskDoneData missionTaskDoneData)
+    {
+        throw new NotImplementedException();
     }
 
     public delegate void OnNumPadClearDelegate();
@@ -53,5 +59,18 @@ public static class EventManager
         }
 
         OnRollDiceDone(rolledDiceData);
+    }
+
+    public delegate void OnCipherInputDoneDelegate(MissionInputData missionInputData);
+    public static event OnCipherInputDoneDelegate OnCipherInputDone;
+    public static void OnCipherInputDoneEvent(MissionInputData missionInputData)
+    {
+        if (OnCipherInputDone == null)
+        {
+            Debug.LogWarning("Event has no subscribers");
+            return;
+        }
+
+        OnCipherInputDone(missionInputData);
     }
 }
